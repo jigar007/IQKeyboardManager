@@ -9,6 +9,15 @@
 
 [![Build Status](https://travis-ci.org/hackiftekhar/IQKeyboardManager.svg)](https://travis-ci.org/hackiftekhar/IQKeyboardManager)
 
+#### Key Changes from original IQKeyboardManager
+
+Same as Original IQKeyboardManager but supports adding UITextField which Contained in UIStackView for Up and down arrow key in top of Keybord
+
+Tou can add below line in viewDidLoad method
+
+IQKeyboardManager.shared.overrideIteratingTextFields = [<IBOutlet property name of name all of your UITextField separated by Comma>]
+
+-------------------------------------------------------------------------
 
 Often while developing an app, We ran into an issues where the iPhone keyboard slide up and cover the `UITextField/UITextView`. `IQKeyboardManager` allows you to prevent issues of the keyboard sliding up and cover `UITextField/UITextView` without needing you to enter any code and no additional setup required. To use `IQKeyboardManager` you simply need to add source files to your project.
 
