@@ -38,6 +38,11 @@ Codeless drop-in universal library allows to prevent issues of keyboard sliding 
 public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
     
     /**
+    Adding UITextField to stack
+    */
+    public var overrideIteratingTextFields: [UIView]?
+    
+    /**
     Default tag for toolbar with Done button   -1002.
     */
     private static let  kIQDoneButtonToolbarTag         =   -1002
@@ -1748,6 +1753,11 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
         
         var superConsideredView : UIView?
 
+        // Adding UITextField to stack
+        if let overriddenTextFields = overrideIteratingTextFields {
+        return overriddenTextFields
+        }
+        
         //If find any consider responderView in it's upper hierarchy then will get deepResponderView.
         for disabledClass in toolbarPreviousNextAllowedClasses {
             
